@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kota Chinmaya Sree — Biotech · Healthcare · Technology</title>
+  <meta name="description" content="Portfolio of Kota Chinmaya Sree, Industrial Biotechnology undergraduate bridging biotechnology, healthcare and innovation." />
+  <meta name="keywords" content="Kota Chinmaya Sree, Biotechnology, Computational Drug Discovery, Molecular Biology, Bioinformatics" />
+  <meta property="og:title" content="Kota Chinmaya Sree — Biotech · Healthcare · Technology" />
+  <meta property="og:description" content="Bridging Biotechnology, Healthcare & Innovation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- VanillaTilt for 3D card tilt -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="pageLoader">
+    <div class="loader-dna">
+      <div class="dna-strand"></div>
+      <div class="loader-text">CHINMAYA<span class="loader-dot-anim">...</span></div>
+    </div>
+  </div>
+
+  <!-- Particle Canvas Background -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Mouse glow follower -->
+  <div id="mouseGlow"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-text">CHINMAYA</span>
+        <span class="logo-dot"></span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HOME SECTION -->
+  <section id="home" class="hero-section">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <div class="hero-badge" id="heroBadge">
+        <span class="badge-dot"></span>
+        <span>Available for Internships &amp; Research Roles</span>
+      </div>
+      <h1 class="hero-name" id="heroName">
+        <span class="name-kota">KOTA</span>
+        <span class="name-chinmaya"> CHINMAYA SREE</span>
+      </h1>
+      <div class="hero-typing-wrapper" id="heroTyping">
+        <span class="typing-prefix">I am a </span>
+        <span class="typing-text" id="typingText"></span>
+        <span class="typing-cursor">|</span>
+      </div>
+      <p class="hero-subtitle" id="heroSubtitle">Bridging Biotechnology, Healthcare &amp; Innovation</p>
+      <p class="hero-designation" id="heroDesig">Industrial Biotechnology · B.Tech (2022–2026)</p>
+      <div class="hero-cta" id="heroCta">
+        <a href="./Chinmaya sree Kota.pdf" download="Kota-Chinmaya-Sree-Resume.pdf" class="btn-primary magnetic-btn" id="downloadResumeBtn">
+          <span><i class="fas fa-download"></i> Download Resume</span>
+        </a>
+        <a href="#projects" class="btn-secondary magnetic-btn">
+          <span><i class="fas fa-rocket"></i> Explore Portfolio</span>
+        </a>
+      </div>
+      <div class="hero-socials" id="heroSocials">
+        <a href="https://github.com/chinmayasreekota2311-debug" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/chinmaya-sree-kota-3309aa381/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:chinmayasreekota2311@gmail.com" class="social-icon" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <div class="hero-stats" id="heroStats">
+        <div class="stat-card">
+          <div class="stat-number" data-target="8.9" data-decimal="1">0</div>
+          <div class="stat-label">CGPA</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="2" data-decimal="0">0</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="4" data-decimal="0">0</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="4" data-decimal="0">0</div>
+          <div class="stat-label">Languages</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header gs-reveal">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-visual gs-reveal">
+          <div class="about-avatar-wrapper">
+            <div class="avatar-ring outer"></div>
+            <div class="avatar-ring inner"></div>
+            <div class="avatar-core">
+              <i class="fas fa-dna"></i>
+            </div>
+            <div class="avatar-orbit">
+              <div class="orbit-dot"><i class="fas fa-flask"></i></div>
+              <div class="orbit-dot"><i class="fas fa-microscope"></i></div>
+              <div class="orbit-dot"><i class="fas fa-atom"></i></div>
+              <div class="orbit-dot"><i class="fas fa-pills"></i></div>
+              <div class="orbit-dot"><i class="fas fa-laptop-code"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="about-content gs-reveal">
+          <div class="about-text-card">
+            <h3>Professional Summary</h3>
+            <p>Industrial Biotechnology undergraduate with knowledge of molecular biology, microbiology, and basic laboratory techniques. Worked on an academic project focused on identifying lead molecules against the Zika virus using molecular docking studies.</p>
+            <p>Familiar with DNA/RNA extraction, gene expression analysis, and laboratory instrumentation handling. Interested in pharmaceutical and biotechnology roles, with a strong willingness to learn, adapt, and contribute in research and laboratory environments.</p>
+          </div>
+          <div class="about-chips">
+            <span class="chip"><i class="fas fa-map-marker-alt"></i> Vijayawada, AP</span>
+            <span class="chip"><i class="fas fa-graduation-cap"></i> B.Tech Biotech</span>
+            <span class="chip"><i class="fas fa-flask"></i> Lab Research</span>
+            <span class="chip"><i class="fas fa-laptop-code"></i> Computational Biology</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education Timeline -->
+      <div class="education-section gs-reveal">
+        <h3 class="subsection-title"><i class="fas fa-graduation-cap"></i> Education Timeline</h3>
+        <div class="timeline">
+          <div class="timeline-item gs-reveal">
+            <div class="timeline-dot"><i class="fas fa-university"></i></div>
+            <div class="timeline-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+              <div class="timeline-year">2022 – 2026</div>
+              <h4>B.Tech — Industrial Biotechnology</h4>
+              <p class="timeline-institution">Bharath Institute of Higher Education and Research</p>
+              <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Tambaram, Tamil Nadu</p>
+              <div class="timeline-badge">CGPA: 8.9 / 10.0</div>
+            </div>
+          </div>
+          <div class="timeline-item gs-reveal">
+            <div class="timeline-dot"><i class="fas fa-school"></i></div>
+            <div class="timeline-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+              <div class="timeline-year">2020 – 2022</div>
+              <h4>Board of Intermediate Education</h4>
+              <p class="timeline-institution">GDMM Junior College</p>
+              <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Nandigama, Andhra Pradesh</p>
+              <div class="timeline-badge">79.7%</div>
+            </div>
+          </div>
+          <div class="timeline-item gs-reveal">
+            <div class="timeline-dot"><i class="fas fa-star"></i></div>
+            <div class="timeline-card" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+              <div class="timeline-year">2019 – 2020</div>
+              <h4>SSC — State Board</h4>
+              <p class="timeline-institution">Narayana English Medium High School</p>
+              <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Nandigama, Andhra Pradesh</p>
+              <div class="timeline-badge">99.5%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-header gs-reveal">
+        <span class="section-tag">What I Know</span>
+        <h2 class="section-title">Skills &amp; <span class="accent">Expertise</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+
+        <!-- Biotechnology Skills — tag cloud -->
+        <div class="skill-category gs-reveal" data-tilt data-tilt-max="6" data-tilt-speed="500">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-dna"></i></div>
+            <h3>Biotechnology Skills</h3>
+          </div>
+          <div class="skill-tags animated-tags">
+            <span class="skill-tag stag-lg">Molecular Biology</span>
+            <span class="skill-tag stag-md">Microbiology</span>
+            <span class="skill-tag stag-md">Biochemistry Fundamentals</span>
+            <span class="skill-tag stag-lg">Aseptic Lab Practices</span>
+          </div>
+        </div>
+
+        <!-- Laboratory Exposure — tag cloud -->
+        <div class="skill-category gs-reveal" data-tilt data-tilt-max="6" data-tilt-speed="500">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-microscope"></i></div>
+            <h3>Laboratory Exposure</h3>
+          </div>
+          <div class="skill-tags animated-tags">
+            <span class="skill-tag stag-lg">DNA/RNA Extraction</span>
+            <span class="skill-tag stag-md">Sample Preparation</span>
+            <span class="skill-tag stag-md">Lab Equipment Handling</span>
+            <span class="skill-tag stag-sm">Basic Analytical Techniques</span>
+          </div>
+        </div>
+
+        <!-- Computational -->
+        <div class="skill-category gs-reveal" data-tilt data-tilt-max="6" data-tilt-speed="500">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>Computational / Bioinformatics</h3>
+          </div>
+          <div class="skill-tags animated-tags">
+            <span class="skill-tag stag-lg">AutoDock Vina</span>
+            <span class="skill-tag stag-md">PyMOL</span>
+            <span class="skill-tag stag-md">Open Babel</span>
+            <span class="skill-tag stag-lg">GROMACS</span>
+            <span class="skill-tag stag-md">SwissADME</span>
+            <span class="skill-tag stag-sm">pkCSM</span>
+          </div>
+        </div>
+
+        <!-- Research -->
+        <div class="skill-category gs-reveal" data-tilt data-tilt-max="6" data-tilt-speed="500">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-search"></i></div>
+            <h3>Research Abilities</h3>
+          </div>
+          <div class="skill-tags animated-tags">
+            <span class="skill-tag stag-lg">Scientific Documentation</span>
+            <span class="skill-tag stag-md">Literature Review</span>
+            <span class="skill-tag stag-md">Experimental Observation</span>
+            <span class="skill-tag stag-sm">Data Interpretation</span>
+          </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="skill-category gs-reveal" data-tilt data-tilt-max="6" data-tilt-speed="500">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-users"></i></div>
+            <h3>Soft Skills</h3>
+          </div>
+          <div class="skill-tags animated-tags">
+            <span class="skill-tag stag-md">Teamwork</span>
+            <span class="skill-tag stag-sm">Leadership</span>
+            <span class="skill-tag stag-lg">Communication</span>
+            <span class="skill-tag stag-md">Problem-Solving</span>
+            <span class="skill-tag stag-sm">Time Management</span>
+            <span class="skill-tag stag-md">Critical Thinking</span>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="skill-category gs-reveal" data-tilt data-tilt-max="6" data-tilt-speed="500">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-language"></i></div>
+            <h3>Languages Known</h3>
+          </div>
+          <div class="language-cards">
+            <div class="lang-card"><span class="lang-flag">🇮🇳</span><span>Telugu</span><span class="lang-level native">Native</span></div>
+            <div class="lang-card"><span class="lang-flag">🇬🇧</span><span>English</span><span class="lang-level fluent">Fluent</span></div>
+            <div class="lang-card"><span class="lang-flag">🇮🇳</span><span>Hindi</span><span class="lang-level intermediate">Intermediate</span></div>
+            <div class="lang-card"><span class="lang-flag">🇮🇳</span><span>Tamil</span><span class="lang-level basic">Basic</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header gs-reveal">
+        <span class="section-tag">My Work</span>
+        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card gs-reveal" id="project1card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+          <div class="project-card-inner">
+            <div class="project-glow"></div>
+            <div class="project-header">
+              <div class="project-icon-wrap">
+                <i class="fas fa-virus"></i>
+              </div>
+              <div class="project-num">01</div>
+            </div>
+            <h3 class="project-title">Zika Virus NS3 Protein Inhibitor Identification System</h3>
+            <p class="project-desc">Computational drug discovery project identifying potential inhibitors targeting the NS3 protein of the Zika virus using molecular docking, ADME analysis, and MD simulations.</p>
+            <div class="project-tags">
+              <span class="ptag">Computational Biology</span>
+              <span class="ptag">Drug Discovery</span>
+              <span class="ptag">Molecular Docking</span>
+              <span class="ptag">Bioinformatics</span>
+            </div>
+            <button class="project-btn" onclick="openModal('modal1')">
+              <i class="fas fa-expand-alt"></i> View Details
+            </button>
+          </div>
+        </div>
+
+        <div class="project-card gs-reveal" id="project2card" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+          <div class="project-card-inner">
+            <div class="project-glow" style="background:radial-gradient(circle,rgba(5,150,105,.15) 0%,transparent 65%);"></div>
+            <div class="project-header">
+              <div class="project-icon-wrap" style="background:linear-gradient(135deg,#059669,#10b981);">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <div class="project-num">02</div>
+            </div>
+            <h3 class="project-title">Terminalia catappa Based Wound Healing Study Using Zebrafish Model</h3>
+            <p class="project-desc">Conducted wound healing studies using the zebrafish caudal fin regeneration model with phytochemical, antioxidant, and anti-inflammatory analysis of T. catappa leaf extract.</p>
+            <div class="project-tags">
+              <span class="ptag">Phytochemistry</span>
+              <span class="ptag">Wound Healing</span>
+              <span class="ptag">Zebrafish Model</span>
+              <span class="ptag">Herbal Formulation</span>
+            </div>
+            <button class="project-btn" onclick="openModal('modal2')">
+              <i class="fas fa-expand-alt"></i> View Details
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT MODALS -->
+  <div class="modal-overlay" id="modal1" onclick="closeModal(event,'modal1')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModalDirect('modal1')"><i class="fas fa-times"></i></button>
+      <div class="modal-icon-wrap"><i class="fas fa-virus"></i></div>
+      <h2>Zika Virus NS3 Protein Inhibitor Identification System</h2>
+      <div class="modal-tag-row">
+        <span class="ptag">Computational Biology</span><span class="ptag">Drug Discovery</span>
+        <span class="ptag">Molecular Docking</span><span class="ptag">Bioinformatics</span>
+      </div>
+      <div class="modal-details">
+        <h4><i class="fas fa-bullseye"></i> Objective</h4>
+        <p>Identify potential inhibitors targeting the NS3 protein of the Zika virus through computational drug discovery.</p>
+        <h4><i class="fas fa-tools"></i> Tools &amp; Methods</h4>
+        <ul>
+          <li><strong>AutoDock Vina, PyMOL, Open Babel</strong> — Virtual screening, molecular docking, and protein–ligand interaction analysis</li>
+          <li><strong>SwissADME &amp; pkCSM</strong> — ADME and drug-likeness analysis to evaluate bioavailability, toxicity, and pharmacokinetic properties</li>
+          <li><strong>GROMACS</strong> — Molecular Dynamics (MD) simulations; analyzed RMSD, RMSF, hydrogen bonding, and structural stability</li>
+        </ul>
+        <h4><i class="fas fa-chart-line"></i> Outcomes</h4>
+        <p>Successfully identified antiviral lead molecules through comprehensive computational screening and MD simulation analysis, contributing to potential therapeutic development against Zika virus.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal2" onclick="closeModal(event,'modal2')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModalDirect('modal2')"><i class="fas fa-times"></i></button>
+      <div class="modal-icon-wrap" style="background:linear-gradient(135deg,#059669,#10b981);"><i class="fas fa-leaf"></i></div>
+      <h2>Terminalia catappa Based Wound Healing Study Using Zebrafish Model</h2>
+      <div class="modal-tag-row">
+        <span class="ptag">Phytochemistry</span><span class="ptag">Wound Healing</span>
+        <span class="ptag">Zebrafish Model</span><span class="ptag">Herbal Formulation</span>
+      </div>
+      <div class="modal-details">
+        <h4><i class="fas fa-bullseye"></i> Objective</h4>
+        <p>Evaluate the wound healing potential of Terminalia catappa leaf extract using the zebrafish caudal fin regeneration model.</p>
+        <h4><i class="fas fa-tools"></i> Methodology</h4>
+        <ul>
+          <li>Conducted wound healing studies using the zebrafish caudal fin regeneration model</li>
+          <li>Performed phytochemical, antioxidant, and anti-inflammatory analysis of T. catappa leaf extract</li>
+          <li>Analyzed tissue regeneration and histopathological changes to evaluate wound healing activity</li>
+          <li>Developed a herbal cream formulation from the extract</li>
+        </ul>
+        <h4><i class="fas fa-chart-line"></i> Outcomes</h4>
+        <p>Gained hands-on biomedical lab research experience; demonstrated the wound healing activity of T. catappa extract with measurable tissue regeneration metrics and successful herbal cream formulation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section id="certifications" class="section cert-section">
+    <div class="container">
+      <div class="section-header gs-reveal">
+        <span class="section-tag">Credentials</span>
+        <h2 class="section-title">Certifications &amp; <span class="accent">Achievements</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="cert-grid">
+
+        <div class="cert-card gs-reveal">
+          <div class="cert-card-inner">
+            <div class="cert-front">
+              <div class="cert-icon"><i class="fas fa-dna"></i></div>
+              <div class="cert-badge-num">01</div>
+              <h4>Bioinformatics for Biologists</h4>
+              <p>Analysing and Interpreting Genomics Datasets</p>
+              <span class="cert-issuer"><i class="fas fa-award"></i> Wellcome Connecting Science (FutureLearn)</span>
+              <span class="cert-hover-hint"><i class="fas fa-mouse-pointer"></i> Hover / Tap for more</span>
+            </div>
+            <div class="cert-back">
+              <i class="fas fa-certificate cert-back-icon"></i>
+              <h4>Bioinformatics for Biologists</h4>
+              <p class="cert-back-desc">Completed a comprehensive course on genomics data analysis and interpretation.</p>
+              <a href="https://drive.google.com/file/d/1xlsxRKq38cPugS2t0G5TrP7G6RhJQLi3/view?usp=drive_link" target="_blank" rel="noopener" class="cert-view-btn">
+                <i class="fas fa-external-link-alt"></i> View Certificate
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card gs-reveal">
+          <div class="cert-card-inner">
+            <div class="cert-front">
+              <div class="cert-icon" style="background:linear-gradient(135deg,#0369a1,#0ea5e9);"><i class="fas fa-syringe"></i></div>
+              <div class="cert-badge-num">02</div>
+              <h4>Vaccine Vial Monitors (VVM)</h4>
+              <p>Vaccine cold chain and VVM technology</p>
+              <span class="cert-issuer"><i class="fas fa-award"></i> UNICEF (Agora)</span>
+              <span class="cert-hover-hint"><i class="fas fa-mouse-pointer"></i> Hover / Tap for more</span>
+            </div>
+            <div class="cert-back">
+              <i class="fas fa-certificate cert-back-icon"></i>
+              <h4>Vaccine Vial Monitors (VVM)</h4>
+              <p class="cert-back-desc">Training on vaccine cold chain management and VVM technology from UNICEF's Agora platform.</p>
+              <a href="https://drive.google.com/file/d/11YexABl00tdGNLZ7QqXlBAOJx26GyGRj/view?usp=drive_link" target="_blank" rel="noopener" class="cert-view-btn">
+                <i class="fas fa-external-link-alt"></i> View Certificate
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card gs-reveal">
+          <div class="cert-card-inner">
+            <div class="cert-front">
+              <div class="cert-icon" style="background:linear-gradient(135deg,#7c3aed,#a855f7);"><i class="fas fa-microscope"></i></div>
+              <div class="cert-badge-num">03</div>
+              <h4>Molecular Biology Workshop</h4>
+              <p>Hands-on molecular biology techniques</p>
+              <span class="cert-issuer"><i class="fas fa-award"></i> Royal Bio Research Centre</span>
+              <span class="cert-hover-hint"><i class="fas fa-mouse-pointer"></i> Hover / Tap for more</span>
+            </div>
+            <div class="cert-back">
+              <i class="fas fa-certificate cert-back-icon"></i>
+              <h4>Molecular Biology Workshop</h4>
+              <p class="cert-back-desc">Participated in an intensive hands-on workshop covering molecular biology techniques and laboratory practices.</p>
+              <a href="https://drive.google.com/file/d/1o_Z1JUph5engQF3tjbd2t4qVXQp_bMmZ/view?usp=drive_link" target="_blank" rel="noopener" class="cert-view-btn">
+                <i class="fas fa-external-link-alt"></i> View Certificate
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card gs-reveal">
+          <div class="cert-card-inner">
+            <div class="cert-front">
+              <div class="cert-icon" style="background:linear-gradient(135deg,#b45309,#f59e0b);"><i class="fas fa-star"></i></div>
+              <div class="cert-badge-num">04</div>
+              <h4>I Think Biology — Elite Certificate</h4>
+              <p>Elite level performance in biology</p>
+              <span class="cert-issuer"><i class="fas fa-award"></i> NPTEL (IIT Madras)</span>
+              <span class="cert-hover-hint"><i class="fas fa-mouse-pointer"></i> Hover / Tap for more</span>
+            </div>
+            <div class="cert-back">
+              <i class="fas fa-certificate cert-back-icon"></i>
+              <h4>I Think Biology — Elite</h4>
+              <p class="cert-back-desc">Earned Elite Certificate from NPTEL (IIT Madras) for outstanding performance in the I Think Biology course.</p>
+              <a href="https://drive.google.com/file/d/15yWBWp5_KV19vApDmhkMdbPAO0xXCc1g/view?usp=drive_link" target="_blank" rel="noopener" class="cert-view-btn">
+                <i class="fas fa-external-link-alt"></i> View Certificate
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header gs-reveal">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact <span class="accent">Me</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+
+        <div class="contact-info gs-reveal">
+          <h3>Let's Connect</h3>
+          <p class="contact-intro">I'm actively looking for internship opportunities and research collaborations in biotechnology, pharmaceutical, and computational biology domains. Feel free to reach out!</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-item-content">
+                <span class="contact-item-label">Email</span>
+                <a href="mailto:chinmayasreekota2311@gmail.com" class="contact-item-value">chinmayasreekota2311@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
+              <div class="contact-item-content">
+                <span class="contact-item-label">Phone</span>
+                <a href="tel:+919059244186" class="contact-item-value">+91 9059244186</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact-item-content">
+                <span class="contact-item-label">Location</span>
+                <span class="contact-item-value">Vijayawada, Andhra Pradesh</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div class="contact-item-content">
+                <span class="contact-item-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/chinmaya-sree-kota-3309aa381/" target="_blank" rel="noopener" class="contact-item-value">chinmaya-sree-kota</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-location-card">
+            <div class="location-map-visual">
+              <div class="map-dot-pulse">
+                <div class="map-dot"></div>
+                <div class="map-pulse"></div>
+              </div>
+              <div class="map-grid">
+                <div></div><div></div><div></div><div></div>
+                <div></div><div></div><div></div><div></div>
+                <div></div><div></div><div></div><div></div>
+              </div>
+              <div class="map-label">📍 Vijayawada, AP, India</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap gs-reveal">
+          <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="contactName">Full Name</label>
+              <input type="text" id="contactName" name="name" placeholder="Your full name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subject</label>
+              <input type="text" id="contactSubject" name="subject" placeholder="What is this about?" required />
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" name="message" rows="5" placeholder="Tell me about your opportunity or question..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary form-submit-btn magnetic-btn" id="formSubmitBtn">
+              <span><i class="fas fa-paper-plane"></i> Send Message</span>
+            </button>
+            <div class="form-success" id="formSuccess" style="display:none;">
+              <i class="fas fa-check-circle"></i> Message sent! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo">CHINMAYA</span>
+          <p>Industrial Biotechnology · B.Tech (2022–2026)</p>
+          <p class="footer-tagline">Bridging Biotechnology, Healthcare &amp; Innovation</p>
+        </div>
+        <div class="footer-nav">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-socials-wrap">
+          <h4>Connect</h4>
+          <div class="footer-socials">
+            <a href="https://github.com/chinmayasreekota2311-debug" target="_blank" rel="noopener" class="footer-social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/chinmaya-sree-kota-3309aa381/" target="_blank" rel="noopener" class="footer-social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:chinmayasreekota2311@gmail.com" class="footer-social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Kota Chinmaya Sree — Biotech · Healthcare · Technology</p>
+        <p class="footer-made">Built with <span class="heart">❤</span> and passion for science</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
