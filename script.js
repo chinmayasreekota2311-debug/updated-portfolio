@@ -380,41 +380,25 @@ document.getElementById('backToTop').addEventListener('click', () => {
 });
 
 
-/* ---- TYPING ANIMATION ---- */
+/* ---- SUBTITLE SLIDE ANIMATION ---- */
 (function() {
-  const texts = [
-    'Biotechnologist',
-    'Computational Drug Researcher',
-    'Molecular Biology Enthusiast',
-    'Aspiring Pharma Researcher',
-    'Bioinformatics Explorer'
-  ];
-  const el = document.getElementById('typingText');
-  let textIdx = 0, charIdx = 0, deleting = false, pauseTimer = null;
+  const subtitle = document.getElementById('heroSubtitle');
+  if (!subtitle) return;
 
-  function type() {
-    const current = texts[textIdx];
-    if (!deleting) {
-      el.textContent = current.substring(0, charIdx + 1);
-      charIdx++;
-      if (charIdx === current.length) {
-        deleting = true;
-        clearTimeout(pauseTimer);
-        pauseTimer = setTimeout(type, 1800);
-        return;
-      }
-    } else {
-      el.textContent = current.substring(0, charIdx - 1);
-      charIdx--;
-      if (charIdx === 0) {
-        deleting = false;
-        textIdx = (textIdx + 1) % texts.length;
-      }
-    }
-    setTimeout(type, deleting ? 50 : 80);
-  }
+  // Subtle sliding motion for the subtitle line
+  gsap.fromTo(subtitle,
+    { x: -30, opacity: 0 },
+    { x: 0, opacity: 1, duration: 0.9, ease: 'power3.out', delay: 1.1 }
+  );
 
-  setTimeout(type, 1200);
+  gsap.to(subtitle, {
+    x: 10,
+    duration: 3.8,
+    ease: 'sine.inOut',
+    repeat: -1,
+    yoyo: true,
+    delay: 2.1
+  });
 })();
 
 
